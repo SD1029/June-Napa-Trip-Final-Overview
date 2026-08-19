@@ -610,6 +610,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .day-summary-right small { font-size:6px; }
   .daily-details .expense-main { padding-left:11px; padding-right:11px; }
 }
+@media(max-width:600px){
+  .section { padding: 48px 0; }
+  #notes { padding-top: 18px !important; }
+  #final { padding-top: 18px !important; }
+  .breakdown-grid { grid-template-columns: 1fr; }
+  .breakdown { padding: 18px 15px; }
+  .breakdown-name { font-size: 22px; }
+  .breakdown-line { font-size: 9px; }
+  .breakdown-total { font-size: 20px; }
+}
 </style>
 </head>
 <body>
@@ -629,10 +639,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 <nav class="sticky-nav">
   <div class="nav-inner">
     <a href="#overview">Overview</a>
-    <a href="#quick-entry">Splitwise</a>
     <a href="#notes">Notes</a>
-    <a href="#details">Details</a>
-    <a href="#settle">Who Pays Whom</a>
+    <a href="#details">Weekend Details</a>
     <a href="#final">Final Amounts</a>
   </div>
 </nav>
@@ -655,40 +663,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
       <div class="person"><div class="person-circle" style="background:var(--fatima)">F</div><div class="person-name">Fatima</div><div class="person-role">Guest</div></div>
     </div>
   </div>
-</section>
-
-<!-- The reimbursement-first section -->
-<section class="section" id="quick-entry" style="padding-top:15px;">
-<div class="container">
-  <div class="section-heading">
-    <div class="small">The Important Part</div>
-    <h2>Splitwise Quick Entry</h2>
-    <p>All figures are CAD. These are the actual reimbursement entries to use. Covered expenses are excluded.</p>
-  </div>
-
-  <div class="quick-entry">
-    <div class="quick-entry-header">
-      <h3>Who Pays Whom</h3>
-      <p>Enter the guest-to-host amounts below. Then enter the small host-to-host reconciliation.</p>
-    </div>
-
-    <div class="quick-row"><div class="quick-person">Sabrina</div><div class="quick-arrow">→</div><div class="quick-person">Simran</div><div class="quick-amount">$618.22</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Sabrina</div><div class="quick-arrow">→</div><div class="quick-person">Jas</div><div class="quick-amount">$361.66</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Amanda</div><div class="quick-arrow">→</div><div class="quick-person">Simran</div><div class="quick-amount">$493.75</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Amanda</div><div class="quick-arrow">→</div><div class="quick-person">Jas</div><div class="quick-amount">$283.44</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Helen</div><div class="quick-arrow">→</div><div class="quick-person">Simran</div><div class="quick-amount">$585.86</div><div class="quick-note">Includes Helen's $65 USD take-home wine</div></div>
-    <div class="quick-row"><div class="quick-person">Helen</div><div class="quick-arrow">→</div><div class="quick-person">Jas</div><div class="quick-amount">$283.44</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Fatima</div><div class="quick-arrow">→</div><div class="quick-person">Simran</div><div class="quick-amount">$493.72</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Fatima</div><div class="quick-arrow">→</div><div class="quick-person">Jas</div><div class="quick-amount">$283.44</div><div class="quick-note">Shared weekend expenses</div></div>
-    <div class="quick-row"><div class="quick-person">Jas</div><div class="quick-arrow">→</div><div class="quick-person">Simran</div><div class="quick-amount">$256.54</div><div class="quick-note">Host-to-host reconciliation after guest reimbursements</div></div>
-  </div>
-
-  <div class="quick-entry-total">
-    <div style="font-size:8px;text-transform:uppercase;letter-spacing:2px;color:var(--olive);margin-bottom:5px">Guest totals</div>
-    <strong>Sabrina $979.88 · Amanda $777.19 · Helen $869.30 · Fatima $777.16</strong>
-    <div style="font-size:9px;color:var(--ink-soft);margin-top:5px">Total guest reimbursement: $3,403.53 CAD · plus Jas → Simran: $256.54 CAD</div>
-  </div>
-</div>
 </section>
 
 <!-- Host notes intentionally moved immediately below the reimbursement section -->
@@ -731,35 +705,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 </div>
 </section>
 
-<!-- Who pays whom is expandable -->
-<section class="section" id="settle" style="padding-top:25px;">
-<div class="container">
-  <details class="collapsible">
-    <summary>
-      <div>
-        <span class="collapsible-kicker">Optional Detail</span>
-        <span class="collapsible-title">Who Pays Whom</span>
-        <span class="collapsible-subtitle">Tap to reveal the full reimbursement routing.</span>
-      </div>
-    </summary>
-    <div class="collapsible-body">
-      <div class="settlement-box" style="box-shadow:none;">
-        <div class="settlement-intro"><h3>Full Routing</h3><p>All amounts below are Canadian dollars.</p></div>
-        <div class="settle-row"><div class="person-from">Sabrina</div><div class="arrow">→ Simran</div><div class="settle-amount">$618.22</div></div>
-        <div class="settle-row"><div class="person-from">Sabrina</div><div class="arrow">→ Jas</div><div class="settle-amount">$361.66</div></div>
-        <div class="settle-row"><div class="person-from">Amanda</div><div class="arrow">→ Simran</div><div class="settle-amount">$493.75</div></div>
-        <div class="settle-row"><div class="person-from">Amanda</div><div class="arrow">→ Jas</div><div class="settle-amount">$283.44</div></div>
-        <div class="settle-row"><div class="person-from">Helen</div><div class="arrow">→ Simran</div><div class="settle-amount">$585.86</div></div>
-        <div class="settle-row"><div class="person-from">Helen</div><div class="arrow">→ Jas</div><div class="settle-amount">$283.44</div></div>
-        <div class="settle-row"><div class="person-from">Fatima</div><div class="arrow">→ Simran</div><div class="settle-amount">$493.72</div></div>
-        <div class="settle-row"><div class="person-from">Fatima</div><div class="arrow">→ Jas</div><div class="settle-amount">$283.44</div></div>
-        <div class="settle-row"><div class="person-from">Jas</div><div class="arrow">→ Simran</div><div class="settle-amount">$256.54</div></div>
-      </div>
-    </div>
-  </details>
-</div>
-</section>
-
 <!-- Final amounts are also expandable -->
 <section class="section" id="final" style="padding-top:25px;">
 <div class="container">
@@ -777,8 +722,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
         <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--amanda)">A</div><div class="breakdown-name">Amanda</div></div><div class="breakdown-line"><span>To Simran</span><strong>$493.75</strong></div><div class="breakdown-line"><span>To Jas</span><strong>$283.44</strong></div><div class="breakdown-total"><span>Total Owed</span><strong>$777.19</strong></div></div>
         <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--helen)">H</div><div class="breakdown-name">Helen</div></div><div class="breakdown-line"><span>To Simran</span><strong>$585.86</strong></div><div class="breakdown-line"><span>To Jas</span><strong>$283.44</strong></div><div class="breakdown-total"><span>Total Owed</span><strong>$869.30</strong></div></div>
         <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--fatima)">F</div><div class="breakdown-name">Fatima</div></div><div class="breakdown-line"><span>To Simran</span><strong>$493.72</strong></div><div class="breakdown-line"><span>To Jas</span><strong>$283.44</strong></div><div class="breakdown-total"><span>Total Owed</span><strong>$777.16</strong></div></div>
-        <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--simran)">S</div><div class="breakdown-name">Simran</div></div><div class="breakdown-line"><span>Receives from guests</span><strong>$2,191.55</strong></div><div class="breakdown-line"><span>Receives from Jas</span><strong>$256.54</strong></div><div class="breakdown-total"><span>Net Receive</span><strong>$2,448.09</strong></div></div>
-        <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--jas)">J</div><div class="breakdown-name">Jas</div></div><div class="breakdown-line"><span>Receives from guests</span><strong>$1,211.98</strong></div><div class="breakdown-line"><span>Pays Simran</span><strong>−$256.54</strong></div><div class="breakdown-total"><span>Net Receive</span><strong>$955.44</strong></div></div>
+        <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--simran)">S</div><div class="breakdown-name">Simran</div></div><div class="breakdown-line"><span>Host</span><strong>✓</strong></div><div class="breakdown-line"><span>Guest reimbursement details</span><strong>Hidden</strong></div><div class="breakdown-total"><span>Status</span><strong>Host</strong></div></div>
+        <div class="breakdown"><div class="breakdown-top"><div class="person-circle" style="background:var(--jas)">J</div><div class="breakdown-name">Jas</div></div><div class="breakdown-line"><span>Host</span><strong>✓</strong></div><div class="breakdown-line"><span>Guest reimbursement details</span><strong>Hidden</strong></div><div class="breakdown-total"><span>Status</span><strong>Host</strong></div></div>
       </div>
     </div>
   </details>
